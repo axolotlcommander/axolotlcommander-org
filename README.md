@@ -69,17 +69,9 @@ To update the screenshot, copy `docs/images/screenshot.png` of the app repositor
 
 ## Deployment
 
-1. Repository *Settings → Pages → Build and deployment → Source*: **GitHub Actions**.
-2. *Settings → Pages → Custom domain*: `axolotlcommander.org`, then **Enforce HTTPS**.
-3. DNS at the registrar:
-   - `axolotlcommander.org`: `A` records `185.199.108.153`, `185.199.109.153`,
-     `185.199.110.153`, `185.199.111.153` (and `AAAA` `2606:50c0:8000::153`,
-     `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`);
-   - `www.axolotlcommander.org`: `CNAME` to `axolotlcommander.github.io`.
-4. Organization *Settings → Pages → Verified domains*: verify `axolotlcommander.org`, so no other
-   repository can claim it.
-
-Every push to `main` deploys; pull requests only build.
+Every push to `main` builds the site and deploys it to GitHub Pages (Settings → Pages → Source:
+GitHub Actions); pull requests only build. The custom domain `axolotlcommander.org` is set in the
+Pages settings and verified for the organization; its DNS points to GitHub Pages.
 
 ## License
 
