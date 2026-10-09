@@ -235,6 +235,7 @@ function footer(t, ctx) {
         <a href="${REPO}">GitHub</a>
         <a href="${REPO}/issues">${esc(t.bug)}</a>
         <a href="mailto:${SITE.email}">${SITE.email}</a>
+        <a href="${SITE.coffee}">${esc(t.coffee)}</a>
       </nav>
     </div>
   </footer>`;

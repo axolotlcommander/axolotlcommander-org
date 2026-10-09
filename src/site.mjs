@@ -7,6 +7,7 @@ export const SITE = {
   name: 'Axolotl Commander',
   url: 'https://axolotlcommander.org/',
   email: 'milan@axolotlcommander.org',
+  coffee: 'https://buymeacoffee.com/acidekcz',
   year: 2026,
 };
 
