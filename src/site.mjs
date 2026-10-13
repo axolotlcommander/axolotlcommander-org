@@ -19,6 +19,9 @@ export const LATEST_RELEASE_API = 'https://api.github.com/repos/axolotlcommander
 /** Languages in the order of the switcher; the first one lives at the site root. */
 export const LANGUAGES = ['en', 'cs'];
 
+/** Pixel size of assets-src/screenshot-<lang>.png (the same for every language). */
+export const SHOT = { width: 2864, height: 1544 };
+
 /** Hero shortcut table; the labels are `keys` in content/<lang>.json, in the same order. */
 export const KEYS = ['Tab', 'F3', '⌘Y', 'F5', 'F6', 'F7', 'F8', '⌘K'];
 

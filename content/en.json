@@ -29,7 +29,7 @@
     ["A real Mac app.", "Swift and AppKit, Trash, Quick Look, Finder tags. English and Czech."]
   ],
   "whyH": "Why",
-  "why": "For years I used Salamander on Windows: two panels, everything from the keyboard, a quick look at a file with F3, comparing folders, archives and FTP as ordinary folders. Nothing on the Mac felt like that. Axolotl Commander is an attempt to have the same on the Mac — as a real macOS app, not a ported Windows program.",
+  "why": "For years I used Salamander and Total Commander on Windows: two panels, everything from the keyboard, a quick look at a file with F3, comparing folders, archives and FTP as ordinary folders. Nothing on the Mac felt like that. Axolotl Commander is an attempt to have the same on the Mac — as a real macOS app, not a ported Windows program.",
   "whySig": "Milan Víšek, maintainer",
   "aiH": "Built with AI, in the open",
   "aiLead": "A human decides, the AI writes the code, the specification is the source of truth.",
@@ -49,7 +49,7 @@
   "insp2": ", which builds on ",
   "os": "Open Salamander",
   "insp3": ". The code is written from scratch. Thanks to their authors for decades of work on a keyboard-driven file manager.",
-  "inspDisclaimer": "Axolotl Commander is not affiliated with or endorsed by the authors of Tandem Commander or Open Salamander.",
+  "inspDisclaimer": "Axolotl Commander is not affiliated with or endorsed by the authors of Total Commander, Tandem Commander or Open Salamander.",
   "license": "License: GNU GPL v3 or later",
   "bug": "Report a bug",
   "coffee": "Buy me a coffee",

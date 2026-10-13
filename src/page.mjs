@@ -4,7 +4,7 @@
 // HTML of the landing page and the 404 page. Every text comes from content/<lang>.json and is
 // escaped here; nothing in this file runs in the browser.
 
-import { SITE, REPO, KEYS, FEATURE_KEYS } from './site.mjs';
+import { SITE, REPO, KEYS, FEATURE_KEYS, SHOT } from './site.mjs';
 
 const ESCAPES = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
 
@@ -33,7 +33,7 @@ function head(t, ctx) {
     description: t.description,
     url: absolute(t.path),
     image: og,
-    screenshot: `${SITE.url}assets/screenshot-2480.png`,
+    screenshot: `${SITE.url}assets/screenshot-${t.lang}-2480.png`,
     applicationCategory: 'UtilitiesApplication',
     operatingSystem: 'macOS 15 or later',
     inLanguage: langs.map((l) => l.lang),
@@ -148,13 +148,14 @@ function hero(t, ctx) {
 
 function screenshot(t, ctx) {
   const { root } = ctx;
-  const set = (ext) => `${root}assets/screenshot-1240.${ext} 1240w, ${root}assets/screenshot-2480.${ext} 2480w`;
+  const base = `${root}assets/screenshot-${t.lang}`;
+  const set = (ext) => `${base}-1240.${ext} 1240w, ${base}-2480.${ext} 2480w`;
   const sizes = '(min-width: 1336px) 1240px, calc(100vw - 2 * clamp(8px, 3vw, 48px))';
   return `<section class="shot">
       <picture>
         <source type="image/avif" srcset="${set('avif')}" sizes="${sizes}">
         <source type="image/webp" srcset="${set('webp')}" sizes="${sizes}">
-        <img src="${root}assets/screenshot-1240.png" srcset="${set('png')}" sizes="${sizes}" alt="${esc(t.shotAlt)}" width="2864" height="1424" decoding="async">
+        <img src="${base}-1240.png" srcset="${set('png')}" sizes="${sizes}" alt="${esc(t.shotAlt)}" width="${SHOT.width}" height="${SHOT.height}" decoding="async">
       </picture>
     </section>`;
 }
