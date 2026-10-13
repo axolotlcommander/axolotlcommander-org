@@ -16,7 +16,7 @@ tracking, no cookies, no third-party requests.
 | `src/page.mjs` | HTML of the landing page and the 404 page |
 | `build.mjs` | Builds `_site/` (pages, `sitemap.xml`, `robots.txt`, copy of `static/`) |
 | `static/` | Copied as is: `styles.css`, `site.js` (language choice), icons, images, manifest |
-| `assets-src/` | Source images (icon and screenshot from the app repository) |
+| `assets-src/` | Source images (icon and screenshots from the app repository) |
 | `tools/make-assets.sh` | Regenerates the images in `static/` from `assets-src/` (macOS) |
 | `.github/workflows/pages.yml` | Build and deployment |
 
@@ -60,12 +60,14 @@ button to turn it back on.
 ## Images
 
 `tools/make-assets.sh` needs macOS with `sips` and `swift`, plus `brew install webp libavif`.
-It writes the favicons, the web app icons, the screenshot in AVIF, WebP and PNG (1240 and
-2480 px), and a 1200 × 630 social preview per language (`tools/images.swift`). The results are
+It writes the favicons, the web app icons, and per language the screenshot in AVIF, WebP and
+PNG (1240 and 2480 px) and a 1200 × 630 social preview (`tools/images.swift`). The results are
 committed, so the deployment needs nothing but Node.
 
-To update the screenshot, copy `docs/images/screenshot.png` of the app repository to
-`assets-src/screenshot.png` and run the script.
+To update the screenshots, run `scripts/screenshot/make-screenshot.sh` in the app repository,
+copy its `docs/images/screenshot.png` to `assets-src/screenshot-en.png` and
+`docs/images/screenshot-cs.png` to `assets-src/screenshot-cs.png`, set their pixel size in
+`SHOT` (`src/site.mjs`) and run the script.
 
 ## Deployment
 

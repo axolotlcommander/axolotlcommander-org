@@ -29,7 +29,7 @@
     ["Opravdová aplikace pro Mac.", "Swift a AppKit, Koš, Quick Look, štítky Finderu. Anglicky a česky."]
   ],
   "whyH": "Proč to vzniklo",
-  "why": "Léta jsem na Windows používal Salamander: dva panely, všechno z klávesnice, rychlý pohled do souboru přes F3, porovnávání složek, archivy a FTP jako obyčejné složky. Nic na Macu se tomu nepodobalo. Axolotl Commander je pokus mít totéž na Macu — jako opravdovou macOS aplikaci, ne portovaný program z Windows.",
+  "why": "Léta jsem na Windows používal Salamander a Total Commander: dva panely, všechno z klávesnice, rychlý pohled do souboru přes F3, porovnávání složek, archivy a FTP jako obyčejné složky. Nic na Macu se tomu nepodobalo. Axolotl Commander je pokus mít totéž na Macu — jako opravdovou macOS aplikaci, ne portovaný program z Windows.",
   "whySig": "Milan Víšek, správce projektu",
   "aiH": "Vyvíjeno s AI, otevřeně",
   "aiLead": "Člověk rozhoduje, AI píše kód, specifikace je zdroj pravdy.",
@@ -49,7 +49,7 @@
   "insp2": ", který staví na ",
   "os": "Open Salamanderu",
   "insp3": ". Kód je napsaný od nuly. Děkujeme jejich autorům za desítky let práce na správci souborů ovládaném z klávesnice.",
-  "inspDisclaimer": "Axolotl Commander není nijak spojen s autory Tandem Commanderu ani Open Salamanderu a není jimi podporován.",
+  "inspDisclaimer": "Axolotl Commander není nijak spojen s autory Total Commanderu, Tandem Commanderu ani Open Salamanderu a není jimi podporován.",
   "license": "Licence: GNU GPL v3 nebo novější",
   "bug": "Nahlásit chybu",
   "coffee": "Kup mi kafe",

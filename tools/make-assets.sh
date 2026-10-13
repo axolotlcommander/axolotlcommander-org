@@ -8,7 +8,8 @@
 # assets-src/icon-1024.png and avatar-1024.png come from the app repository:
 #   swift scripts/make-icon.swift icon-1024.png
 #   swift scripts/make-icon.swift avatar-1024.png avatar
-# assets-src/screenshot.png is docs/images/screenshot.png of the app repository.
+# assets-src/screenshot-en.png and screenshot-cs.png are docs/images/screenshot.png and
+# screenshot-cs.png of the app repository (scripts/screenshot/make-screenshot.sh there).
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
@@ -30,16 +31,16 @@ swift tools/images.swift ico "$SRC/icon-1024.png" static/favicon.ico
 # iOS rounds the corners itself and fills transparency with black, so it gets the full-bleed tile.
 resize 180 "$SRC/avatar-1024.png" static/apple-touch-icon.png
 
-# Screenshot: 1240 px (1x) and 2480 px (2x) in AVIF, WebP and PNG for old browsers.
-for width in 1240 2480; do
-  resize "$width" "$SRC/screenshot.png" "$OUT/screenshot-$width.png"
-  cwebp -quiet -q 84 -m 6 "$OUT/screenshot-$width.png" -o "$OUT/screenshot-$width.webp"
-  avifenc --jobs all -q 70 -s 4 "$OUT/screenshot-$width.png" "$OUT/screenshot-$width.avif" >/dev/null
-done
-
-# Social previews, one per language.
+# Screenshots, one per language: 1240 px (1x) and 2480 px (2x) in AVIF, WebP and PNG for old
+# browsers, and the social preview. SHOT in src/site.mjs holds their pixel size.
 for lang in en cs; do
-  swift tools/images.swift og "$lang" "$SRC/icon-1024.png" "$SRC/screenshot.png" "$OUT/og-$lang.png"
+  for width in 1240 2480; do
+    out="$OUT/screenshot-$lang-$width"
+    resize "$width" "$SRC/screenshot-$lang.png" "$out.png"
+    cwebp -quiet -q 84 -m 6 "$out.png" -o "$out.webp"
+    avifenc --jobs all -q 70 -s 4 "$out.png" "$out.avif" >/dev/null
+  done
+  swift tools/images.swift og "$lang" "$SRC/icon-1024.png" "$SRC/screenshot-$lang.png" "$OUT/og-$lang.png"
 done
 
 ls -l static/favicon.ico static/apple-touch-icon.png "$OUT" | awk 'NR > 1 { print $5, $NF }'
